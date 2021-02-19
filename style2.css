@@ -1,0 +1,305 @@
+body {
+
+  width: 100%;
+
+  height: 100vh;
+
+  overflow: hidden;
+
+}
+
+.remote {
+
+  position: absolute;
+
+  width: 260px;
+
+  height: 500px;
+
+  bottom: -90px;
+
+  right: 150px;
+
+  background: url(img/remote_0.png) center no-repeat;
+
+  background-size: cover;
+
+  z-index: 10;
+
+}
+
+
+
+.btn_remote {
+
+  margin-top: 100px;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  text-align: center;
+
+  justify-content: center;
+
+}
+
+
+
+.btn_remote li {
+
+  width: 100px;
+
+  height: 60px;
+
+  margin: 5px;
+
+  cursor: pointer;
+
+}
+
+
+
+.btn_remote li:nth-child(1) {
+
+  background: url(img/remote_1.png) center no-repeat;
+
+  background-size: cover;
+
+}
+
+
+
+.btn_remote li:nth-child(2) {
+
+  background: url(img/remote_2.png) center no-repeat;
+
+  background-size: cover;
+
+}
+
+
+
+.btn_remote li:nth-child(3) {
+
+  background: url(img/remote_3.png) center no-repeat;
+
+  background-size: cover;
+
+}
+
+
+
+.btn_remote li:nth-child(4) {
+
+  background: url(img/remote_4.png) center no-repeat;
+
+  background-size: cover;
+
+}
+
+/*  */
+
+
+
+#spin-off {
+
+  width: 100%;
+
+  height: calc(100vh - 180px);
+
+  position: relative;
+
+  top: 180px;
+
+
+
+  overflow: hidden;
+
+}
+
+.bg {
+
+  width: 100%;
+
+  height: 100%;
+
+  background-image: url(img/spinoff_bg.png);
+
+  background-position: center -70px;
+
+  background-repeat: no-repeat;
+
+  position: absolute;
+
+  z-index: 5;
+
+}
+
+
+
+#screen {
+
+  width: 805px;
+
+  height: 440px;
+
+  position: absolute;
+overflow: hidden;
+  z-index: 6;
+
+  top: 45px;
+
+  left: 49%;
+
+  transform: translateX(-50%);
+
+}
+
+
+
+.screen {
+
+  width: 100%;
+
+  height: 100%;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  display: none;
+
+}
+
+.screen iframe {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.screen.on {
+
+  display: block;
+
+}
+
+
+
+
+.text-box {
+
+  width: 760px;
+
+  height: 300px;
+
+  position: absolute;
+
+  bottom: 5px;
+
+  left: 38%;
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  background-image: url(img/speechbubble.png);
+
+  background-position: center;
+
+  background-size: contain;
+
+  background-repeat: no-repeat;
+
+}
+
+.text-box .box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+
+}
+
+.box figure {
+  position: absolute;
+}
+
+.box figure img {
+  width: 100%;
+}
+
+
+.box1 figure {
+  width: 100%;
+  top: 50px;
+  left: -130px;
+}
+
+.box2 figure {
+  width: 85%;
+  top: 62px;
+  left: 7px;
+}
+
+.box3 figure {
+  width: 85%;
+  top: 65px;
+  left: 2px;
+}
+
+.box4 figure {
+  width: 100%;
+  top: 50px;
+  left: -130px;
+}
+
+
+
+
+
+.text-box .box.on {
+  display: block;
+}
+
+.smpte-sd-test-pattern {
+  position: relative;
+  width: 105%;
+  height: 100%;
+  display: none;
+  background: linear-gradient(to right, #0000c0 14.28%, #131313 14.29%, #131313 28.57%, #c000c0 28.58%, #c000c0 42.85%, #131313 42.86%, #131313 57.14%, #00c0c0 57.15%, #00c0c0 71.42%, #131313 71.43%, #131313 85.71%, #c0c0c0 85.72%);
+}
+.smpte-sd-test-pattern.on{display: block;}
+
+.smpte-sd-test-pattern:before,
+.smpte-sd-test-pattern:after {
+  content: " ";
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.smpte-sd-test-pattern:before {
+  top: 0;
+  height: 66.67%;
+  background: linear-gradient(to right, #c0c0c0 14.28%, #c0c000 14.29%, #c0c000 28.57%, #00c0c0 28.58%, #00c0c0 42.85%, #00c000 42.86%, #00c000 57.14%, #c000c0 57.15%, #c000c0 71.42%, #c00000 71.43%, #c00000 85.71%, #0000c0 85.72%);
+}
+
+.smpte-sd-test-pattern:after {
+  bottom: 0;
+  height: 25%;
+  background: linear-gradient(to right, #00214c 17.85%, #fff 17.86%, #fff 35.71%, #32006a 35.72%, #32006a 53.57%, #131313 53.58%, #131313 71.42%, #090909 71.43%, #090909 76.19%, #131313 76.2%, #131313 80.95%, #1d1d1d 80.96%, #1d1d1d 85.71%, #131313 85.72%);
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}

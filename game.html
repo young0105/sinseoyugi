@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="style1.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body>
+    <div id="game">
+
+        <div class="game game1">
+
+            <figure><img src="img/game1.png" alt="" class="img1"></figure>
+
+            <div class="info">
+
+                <div class="plus_btn"></div>
+
+                <div class="info_box">
+
+                    <img src="img/game1_title.png" alt="">
+
+                    <p>주제어를 몸으로 표현하고 맞추는 게임.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="game game2">
+
+            <figure><img src="img/game2.png" alt="" class="img2"></figure>
+
+            <div class="info">
+
+                <div class="plus_btn"></div>
+
+                <div class="info_box">
+
+                    <img src="img/game2_title.png" alt="" style="width: 20%;">
+                    <p>서로 귀가 잘안들리게 귀마개를 끼거나
+                        음악을 틀어놓고 이어폰이나 헤드셋을 착용 후
+                        제시어를  읽지 않고 설명해야한다.
+                        몸과 영어로 설명은 No! </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="game game3">
+
+            <figure><img src="img/game3.png" alt="" class="img2"></figure>
+
+            <div class="info">
+
+                <div class="plus_btn"></div>
+
+                <div class="info_box">
+
+                    <img src="img/game3_title.png" alt="" style="width: 45%;">
+                    <p>의자를 사람 수 보다 하나 적게 놓고 의자주변을 
+                        음악과 함께 빙글빙글 돌면서 댄스타임을 갖다가, 
+                        호루라기를 불면 선착순으로 의자에 앉는게임</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="game game4">
+
+            <figure>
+
+                <img src="img/game4.png" alt="" class="img1"> </figure>
+
+            <div class="info">
+
+                <div class="plus_btn"></div>
+
+                <div class="info_box">
+
+                    <img src="img/game4_title.png" alt="">
+                    <p>서로 귀가 잘안들리게 귀마개를 끼거나
+                        음악을 틀어놓고 이어폰이나 헤드셋을 착용 후
+                        제시어를  읽지 않고 설명해야한다.
+                        몸과 영어로 설명은 No! </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="video">
+
+            <div class="inner">
+
+                <iframe src="https://www.youtube.com/embed/NorTwrIfhxc?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0"
+
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                    allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/9-tnH8MYP4I?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0"
+
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                    allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/fKxeRLCy2h8?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0"
+
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                    allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/FZ4M9pKbe7M?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0"
+
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                    allowfullscreen></iframe>
+
+                <a href="#" class="prev"></a>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="js/jquery.transit.min.js"></script>
+
+
+
+    <script>
+
+        $.cssEase['bounce'] = 'cubic-bezier(0,1,0.5,1.3)';
+
+
+
+        function startAni() {
+
+            $('.game').each(function (i) {
+
+
+
+                // $(this).delay(i*200).animate({ 'transform': 'translateY(0%)','opacity':'1'},500);
+
+                $(this).delay(i * 400).transition({
+
+                    y: '0%',
+
+                    'opacity': '1'
+
+                }, 500, 'bounce');
+
+            })
+
+        }
+
+        startAni()
+
+
+
+        $('.plus_btn').mouseenter(function () {
+
+            $(this).next('.info_box').css({
+
+                'display': 'block'
+
+            })
+
+            $(this).parents('.game').addClass('on')
+
+            $(this).parents('.info').css({'cursor':'pointer'})
+
+            $(this).css({'backgroundImage':'url(img/play_btn.png)'})
+
+            
+
+        })
+
+        $('.info').mouseleave(function () {
+
+            $(this).find('.info_box').css({
+
+                'display': 'none'
+
+            })
+
+            $(this).parents('.game').removeClass('on')
+
+            $(this).css({'cursor':'context-menu'})
+
+            $(this).find('.plus_btn').css({'backgroundImage':'url(img/plus_btn.png)'})
+
+        })
+
+        $('.plus_btn').click(function(){
+
+            var i = $(this).parents('.game').index()
+
+
+
+            $('.video').animate({
+
+                'width': '50vw',
+
+                'height': '28.125vw'
+
+            }, 500, function () {
+
+                $(this).find('.inner').css({
+
+                    'opacity': '1'
+
+                })
+
+            })
+
+            $('.video .inner iframe').eq(i).addClass('on')
+
+            $('.prev').css({'display':'block'})
+
+
+
+        })
+
+        $('.info_box').click(function () {
+
+            var i = $(this).parents('.game').index()
+
+
+
+            $('.video').animate({
+
+                'width': '50vw',
+
+                'height': '28.125vw'
+
+            }, 500, function () {
+
+                $(this).find('.inner').css({
+
+                    'opacity': '1'
+
+                })
+
+            })
+
+            $('.video .inner iframe').eq(i).addClass('on')
+
+            $('.prev').css({'display':'block'})
+
+        })
+
+        $('.prev').click(function () {
+var ifidx=$('iframe.on').index()
+$("iframe")[ifidx].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' +
+                '","args":""}', '*');
+
+            $(this).parents('.video').animate({
+                'width': '0%',
+                'height': '0%'
+            }, 500, function () {
+                $(this).find('.inner').css({
+                    'opacity': '0'
+                })
+            })
+            $('.video .inner iframe').removeClass('on')
+            $(this).css({'display':'none'})
+         
+        })
+   
+
+    </script>
+
+</body>
+
+
+
+</html>

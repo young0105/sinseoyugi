@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+
+
+<body>
+
+    <div id="spin-off">
+
+<div class="bg"></div>
+
+        <div id="screen">
+
+            <div class="screen screen1 on">
+                <iframe src="https://www.youtube.com/embed/qBW1WOGSHOY?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="screen screen2">
+                <iframe src="https://www.youtube.com/embed/R8Ox1NZ41Mw?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="screen screen3">
+                <iframe src="https://www.youtube.com/embed/3TTYvTLNN8o?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="screen screen4">
+                <iframe  src="https://www.youtube.com/embed/yYHTVLAOlAY?start=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+           
+<div class="smpte-sd-test-pattern"></div>
+     
+
+        </div>
+
+        <div class="remote">
+
+            <ul class="btn_remote">
+
+                <li><a href="#"></a></li>
+
+                <li><a href="#"></a></li>
+
+                <li><a href="#"></a></li>
+
+                <li><a href="#"></a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="text-box">
+
+            <div class="box box1 on">
+                <figure><img src="img/text-box-img.png" alt=""></figure>
+            </div>
+
+            <div class="box box2">
+                <figure><img src="img/text-box-img2.png" alt=""></figure>
+            </div>
+
+            <div class="box box3">
+                <figure><img src="img/text-box-img3.png" alt=""></figure>
+            </div>
+
+            <div class="box box4">
+                <figure><img src="img/text-box-img.png" alt=""></figure>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script>
+        function textpatternOff(){
+            $('.smpte-sd-test-pattern').removeClass('on')
+        }
+        function textpattern(){
+            $('.smpte-sd-test-pattern').addClass('on')
+            setTimeout(textpatternOff,1000)
+        }
+        textpattern()
+        $('.btn_remote li').click(function () {
+            var i = $(this).index()
+            $('.screen').removeClass('on')
+            textpattern()
+
+            $('.screen').eq(i).addClass('on')
+
+            $('.box').removeClass('on')
+
+            $('.box').eq(i).addClass('on')
+            $("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' +
+                '","args":""}', '*');
+                $("iframe")[1].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' +
+                '","args":""}', '*');
+                $("iframe")[2].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' +
+                '","args":""}', '*');
+                $("iframe")[3].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' +
+                '","args":""}', '*');
+        })
+
+    </script>
+
+</body>
+
+
+
+</html>
