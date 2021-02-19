@@ -1,174 +1,347 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" href="global.css">
-    <title>Document</title>
-    <style>
-    @font-face {
-        src: url(kirin.ttf);
-        font-family: "kirin";
-    }
-    #story{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        background: url(img/index_bg.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    #story h2{
-        padding: 20px;
-        position: absolute;
-        font-family: kirin;
-        background: url(img/h2_bg.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-        width:900px;
-        height:400px;
-        transform: translate(-50%,-50%);
-        top: -30%;
-        left: 50%;
-        animation: storyH2 0.9s forwards cubic-bezier(0.04, 0.53, 0.25, 1);
-    }
-    @keyframes storyH2{
-        0%{top: -30%;}
-        100%{top: 50%;}
-    }
-    #story h2 p{
-        width: 100%;
-        text-align: center;
-        margin: 45px auto;
-        transform: translate(0%,20%);
-        opacity: 0;
-    }
-    #story h2 p:nth-child(1){animation: storyH2p 0.9s 1.5s forwards;}
-    #story h2 p:nth-child(2){animation: storyH2p 0.9s 1.8s forwards;}
-    #story h2 p:nth-child(3){animation: storyH2p 0.9s 2.1s forwards;}
-    @keyframes storyH2p {
-        0%{  opacity: 0;transform: translate(0%,20%);}
-        100%{opacity: 1;transform: translate(0%, 0%);}
-    }
-    .cloud-content{
-            position: absolute;
-            transform: translate(-50%,-50%);
-        }
-    .cloud-content:nth-child(1){top: 60%; left: 80%; animation: clouding 2.3s ease infinite alternate;width: 20%;}
-    .cloud-content:nth-child(2){top: 50%; left: 10%; animation: clouding 2s   ease infinite alternate;width: 15%;}
-    .cloud-content:nth-child(3){top: 40%; left: 87%; animation: clouding 3s   ease infinite alternate;width: 25%;}
-    .cloud-content:nth-child(4){top: 20%; left: 20%; animation: clouding 1.8s ease infinite alternate;width: 30%;}
-    .cloud-content:nth-child(5){top: 15%; left: 80%; animation: clouding 2.5s ease infinite alternate;width: 20%;}
-    @keyframes clouding {
-        from{transform: translate(-50%,-50%);}
-        to{transform: translate(-50%,-65%);}
-    }
-    .cloudImg{
-        width: 100%;
-        transform: translate(0%,0%);
-        opacity: 0.2;
-    }
-    .mountain-container{
-        width: 100%;
-        height: 50vh;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        overflow: hidden;
-    }
-    .mountain-content{
-        width: 35%;
-        position: relative;
-        opacity: 0;
-    }
-    .mountain-content1{
-        animation: mountainRise 0.9s 0.2s forwards;
-    }
-    .mountain-content2{
-        animation: mountainRise 0.9s 0.8s forwards;
-    }
-    .mountain-content3{
-        animation: mountainRise 0.9s 0.5s forwards;
-    }
-    .mountain-content img{
-        width: 120%;
-        position: absolute;
-        bottom: 0;
-    }
-    @keyframes mountainRise {
-        0%{  opacity: 0;transform: translate(0%,10%);}
-        100%{opacity: 1;transform: translate(0%, 0%);}
-    }
-    </style>
-</head>
-<body>
-    <header>
-        <h1></h1>
-        <ul>
-            <li><a href="#">
-                    <img src="img/title2.png" alt="">
-                    <span><img src="img/cloud.png" alt=""></span></a>
-            </li>
-            <li><a href="#"><img src="img/title3.png" alt="">
-                    <span><img src="img/cloud.png" alt=""></span></a>
-            </li>
-            <li><a href="#"><img src="img/title4.png" alt="">
-                    <span><img src="img/cloud.png" alt=""></span></a>
-            </li>
-            <li><a href="#"><img src="img/title5.png" alt="">
-                    <span><img src="img/cloud.png" alt=""></span></a>
-            </li>
-            <li><a href="#"><img src="img/title6.png" alt="">
-                    <span><img src="img/cloud.png" alt=""></span></a>
-            </li>
-        </ul>
-    </header>
-    <section id="story">
-        <div class="cloud-container">
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud1.png" alt="cloud1">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud2.png" alt="cloud2">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud3.png" alt="cloud3">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud5.png" alt="cloud5">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud4.png" alt="cloud4">
-            </div>
-        </div>
-        <h2>
-            <p>옛날 옛날 먼 우주에는 7개를 모으면<br>
-            어떤 소원이든 이룰 수 있다는 “전설의 드래곤볼”이 있었더랬다.<br>
-            </p>
-            <p>
-                서기 이천십오년, 삼장법사와 손오공, 저팔계, 사오정은 드래곤볼을 찾아<br>
-                중국 서안을 시작으로 고행의 길을 떠나게 되고,<br>
-                이렇게 시작된 여행은 끝을 모르고 5년을 넘게 계속 되는데…,<br>
-            </p>
-            <p>
-                지금까지 들어본 적도 없고, 차마 볼 수도 없었던 리얼 막장 예능이 온다!<br>
-            </p>
-        </h2>
-        <div class="mountain-container">
-            <div class="mountain-content mountain-content1">
-                <img src="img/mountain1.png" alt="mt1">
-            </div>
-            <div class="mountain-content mountain-content2">
-                <img src="img/mountain2.png" alt="mt2">
-            </div>
-            <div class="mountain-content mountain-content3">
-                <img src="img/mountain3.png" alt="mt3">
-            </div>
-        </div>
-    </section>
-</body>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="global.css">
+
+    <title>Document</title>
+
+    <style>
+
+    @font-face {
+
+        src: url(kirin.ttf);
+
+        font-family: "kirin";
+
+    }
+
+    #story{
+
+        position: relative;
+
+        width: 100%;
+
+        height: 100vh;
+
+        background: url(img/index_bg.jpg);
+
+        background-size: cover;
+
+        background-position: center center;
+
+    }
+
+    #story h2{
+
+        padding: 20px;
+
+        position: absolute;
+
+        font-family: kirin;
+
+        background: url(img/h2_bg.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+        background-position: center center;
+
+        width:900px;
+
+        height:400px;
+
+        transform: translate(-50%,-50%);
+
+        top: -30%;
+
+        left: 50%;
+
+        animation: storyH2 0.9s forwards cubic-bezier(0.04, 0.53, 0.25, 1);
+
+    }
+
+    @keyframes storyH2{
+
+        0%{top: -30%;}
+
+        100%{top: 50%;}
+
+    }
+
+    #story h2 p{
+
+        width: 100%;
+
+        text-align: center;
+
+        margin: 45px auto;
+
+        transform: translate(0%,20%);
+
+        opacity: 0;
+
+    }
+
+    #story h2 p:nth-child(1){animation: storyH2p 0.9s 1.5s forwards;}
+
+    #story h2 p:nth-child(2){animation: storyH2p 0.9s 1.8s forwards;}
+
+    #story h2 p:nth-child(3){animation: storyH2p 0.9s 2.1s forwards;}
+
+    @keyframes storyH2p {
+
+        0%{  opacity: 0;transform: translate(0%,20%);}
+
+        100%{opacity: 1;transform: translate(0%, 0%);}
+
+    }
+
+    .cloud-content{
+
+            position: absolute;
+
+            transform: translate(-50%,-50%);
+
+        }
+
+    .cloud-content:nth-child(1){top: 60%; left: 80%; animation: clouding 2.3s ease infinite alternate;width: 20%;}
+
+    .cloud-content:nth-child(2){top: 50%; left: 10%; animation: clouding 2s   ease infinite alternate;width: 15%;}
+
+    .cloud-content:nth-child(3){top: 40%; left: 87%; animation: clouding 3s   ease infinite alternate;width: 25%;}
+
+    .cloud-content:nth-child(4){top: 20%; left: 20%; animation: clouding 1.8s ease infinite alternate;width: 30%;}
+
+    .cloud-content:nth-child(5){top: 15%; left: 80%; animation: clouding 2.5s ease infinite alternate;width: 20%;}
+
+    @keyframes clouding {
+
+        from{transform: translate(-50%,-50%);}
+
+        to{transform: translate(-50%,-65%);}
+
+    }
+
+    .cloudImg{
+
+        width: 100%;
+
+        transform: translate(0%,0%);
+
+        opacity: 0.2;
+
+    }
+
+    .mountain-container{
+
+        width: 100%;
+
+        height: 50vh;
+
+        position: absolute;
+
+        bottom: 0;
+
+        left: 0;
+
+        display: flex;
+
+        overflow: hidden;
+
+    }
+
+    .mountain-content{
+
+        width: 35%;
+
+        position: relative;
+
+        opacity: 0;
+
+    }
+
+    .mountain-content1{
+
+        animation: mountainRise 0.9s 0.2s forwards;
+
+    }
+
+    .mountain-content2{
+
+        animation: mountainRise 0.9s 0.8s forwards;
+
+    }
+
+    .mountain-content3{
+
+        animation: mountainRise 0.9s 0.5s forwards;
+
+    }
+
+    .mountain-content img{
+
+        width: 120%;
+
+        position: absolute;
+
+        bottom: 0;
+
+    }
+
+    @keyframes mountainRise {
+
+        0%{  opacity: 0;transform: translate(0%,10%);}
+
+        100%{opacity: 1;transform: translate(0%, 0%);}
+
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1></h1>
+
+        <ul>
+
+            <li><a href="#">
+
+                    <img src="img/title2.png" alt="">
+
+                    <span><img src="img/cloud.png" alt=""></span></a>
+
+            </li>
+
+            <li><a href="#"><img src="img/title3.png" alt="">
+
+                    <span><img src="img/cloud.png" alt=""></span></a>
+
+            </li>
+
+            <li><a href="#"><img src="img/title4.png" alt="">
+
+                    <span><img src="img/cloud.png" alt=""></span></a>
+
+            </li>
+
+            <li><a href="#"><img src="img/title5.png" alt="">
+
+                    <span><img src="img/cloud.png" alt=""></span></a>
+
+            </li>
+
+            <li><a href="#"><img src="img/title6.png" alt="">
+
+                    <span><img src="img/cloud.png" alt=""></span></a>
+
+            </li>
+
+        </ul>
+
+    </header>
+
+    <section id="story">
+
+        <div class="cloud-container">
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud1.png" alt="cloud1">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud2.png" alt="cloud2">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud3.png" alt="cloud3">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud5.png" alt="cloud5">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud4.png" alt="cloud4">
+
+            </div>
+
+        </div>
+
+        <h2>
+
+            <p>옛날 옛날 먼 우주에는 7개를 모으면<br>
+
+            어떤 소원이든 이룰 수 있다는 “전설의 드래곤볼”이 있었더랬다.<br>
+
+            </p>
+
+            <p>
+
+                서기 이천십오년, 삼장법사와 손오공, 저팔계, 사오정은 드래곤볼을 찾아<br>
+
+                중국 서안을 시작으로 고행의 길을 떠나게 되고,<br>
+
+                이렇게 시작된 여행은 끝을 모르고 5년을 넘게 계속 되는데…,<br>
+
+            </p>
+
+            <p>
+
+                지금까지 들어본 적도 없고, 차마 볼 수도 없었던 리얼 막장 예능이 온다!<br>
+
+            </p>
+
+        </h2>
+
+        <div class="mountain-container">
+
+            <div class="mountain-content mountain-content1">
+
+                <img src="img/mountain1.png" alt="mt1">
+
+            </div>
+
+            <div class="mountain-content mountain-content2">
+
+                <img src="img/mountain2.png" alt="mt2">
+
+            </div>
+
+            <div class="mountain-content mountain-content3">
+
+                <img src="img/mountain3.png" alt="mt3">
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
 </html>

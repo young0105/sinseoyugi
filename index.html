@@ -1,315 +1,629 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/reset.css">
-    <title>Document</title>
-    <style>
-        body{
-            width: 100%;
-            height: 100vh;
-            background: url(img/bg.gif);
-            overflow: hidden;
-        }
-        .blue-filter{
-            position: absolute;
-            width: 100%;
-            height: 800%;
-            opacity: 0.7;
-            background: linear-gradient(180deg, rgba(7,9,32,1) 0%, rgba(7,9,32,1) 21%, rgba(32,42,64,1) 30%, rgba(56,74,95,1) 47%, rgba(192,240,255,1) 80%, rgba(192,240,255,1) 100%);
-            animation: bgRising 2s 3s ease forwards;
-        }
-        @keyframes bgRising{
-            from{top: 0%;opacity: 0.7;}
-            to{top: -700%;opacity: 1;}
-        }
-        .index-container{
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .ball-content{
-            width: 300%;
-            height: 300%;
-            /* border: 1px solid rgb(255, 0, 0); */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%) rotate(0deg);
-            animation: ballRotate-out 1.8s 0.2s ease forwards;
-            transition: 0.5s;
-        }
-        .ball-content:nth-child(2){
-            animation-delay: 0.05s;
-            transform: translate(-50%,-50%) rotate(51.42857deg)
-        }
-        .ball-content:nth-child(3){
-            animation-delay: 0.1s;
-            transform: translate(-50%,-50%) rotate(102.85714deg)
-        }
-        .ball-content:nth-child(4){
-            animation-delay: 0.15s;
-            transform: translate(-50%,-50%) rotate(154.28571deg)
-        }
-        .ball-content:nth-child(5){
-            animation-delay: 0.2s;
-            transform: translate(-50%,-50%) rotate(205.71428deg)
-        }
-        .ball-content:nth-child(6){
-            animation-delay: 0.25s;
-            transform: translate(-50%,-50%) rotate(257.14285deg)
-        }
-        .ball-content:nth-child(7){
-            animation-delay: 0.3s;
-            transform: translate(-50%,-50%) rotate(308.57142deg)
-        }
-        @keyframes ballRotate-out {
-            from{
-                width: 300%;
-                height: 300%;
-            }
-            to{
-                width: 0%;
-                height: 0%;
-            }
-        }
-        .relative{
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform: rotate(-40deg);
-            animation: ballRotate-in 1.6s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        @keyframes ballRotate-in{
-            from{
-                transform: rotate(-40deg);
-            }
-            to{
-                transform: rotate(180deg);  
-            }
-        }
-        .ball-content:nth-child(2) .relative{
-            animation-delay: 0.05s;
-        }
-        .ball-content:nth-child(3) .relative{
-            animation-delay: 0.1s;
-        }
-        .ball-content:nth-child(4) .relative{
-            animation-delay: 0.15s;
-        }
-        .ball-content:nth-child(5) .relative{
-            animation-delay: 0.2s;
-        }
-        .ball-content:nth-child(6) .relative{
-            animation-delay: 0.25s;
-        }
-        .ball-content:nth-child(7) .relative{
-            animation-delay: 0.3s;
-        }
-        img.ball{
-            position: absolute;
-            width: 200px;
-            /* transform: translate(-50%,-50%) rotate(0deg); */
-            top: 0%;
-            left: 50%;
-            animation: ball1 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        .ball-content:nth-child(2) .ball{
-            animation-delay: 0.05s;
-            animation: ball2 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        .ball-content:nth-child(3) .ball{
-            animation-delay: 0.1s;
-            animation: ball3 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        .ball-content:nth-child(4) .ball{
-            animation-delay: 0.15s;
-            animation: ball4 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        .ball-content:nth-child(5) .ball{
-            animation-delay: 0.2s;
-            animation: ball5 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        .ball-content:nth-child(6) .ball{
-            animation-delay: 0.25s;
-            animation: ball6 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        .ball-content:nth-child(7) .ball{
-            animation-delay: 0.3s;
-            animation: ball7 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
-        }
-        @keyframes ball1{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-177deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-177deg);}}
-        @keyframes ball2{0%{opacity: 1; transform: translate(-41%,-39%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-230deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-230deg);}}
-        @keyframes ball3{0%{opacity: 1; transform: translate(-36%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-282deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-282deg);}}
-        @keyframes ball4{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-333deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-333deg);}}
-        @keyframes ball5{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-23deg) }100%{opacity: 0; transform: translate(-50%,-50%) rotate(-23deg) ;}}
-        @keyframes ball6{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-75deg) }100%{opacity: 0; transform: translate(-50%,-50%) rotate(-75deg) ;}}
-        @keyframes ball7{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-126deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-126deg);}}
-        .explode,
-        .logo-animate{
-            position: absolute;
-            transform: translate(-50%,-50%);
-            top:40%;
-            left: 50%;
-            opacity: 0;
-        }
-        .explode{
-            animation: explode 1.6s 2s ease forwards;
-        }
-        @keyframes explode {
-            0%{opacity: 0;transform:translate(-50%,-50%) scale(1);}
-            25%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
-            50%{opacity: 1;transform:translate(-50%,-50%) scale(1);}
-            75%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
-            100%{opacity: 0;transform:translate(-50%,-50%) scale(1);}
-        }
-        .logo-animate{
-            width: 500px;
-            animation: logoMain 1.5s 2.6s ease forwards;
-        }
-        @keyframes logoMain {
-            0%{opacity: 0; transform:translate(-50%,-60%) scale(0.95);}
-            100%{opacity: 1; transform:translate(-50%,-70%) scale(1);}
-        }
-        .logo-animate>img{
-            width: 80%;
-            display: block;
-            margin: auto;
-        }
-        .cloud-content{
-            position: absolute;
-            transform: translate(-50%,-50%);
-        }
-        .logo-enter{
-            margin-top: 25px;
-            width: 500px;
-        }
-        .logo-enter img{
-            width: 100%;
-        }
-        .cloud-content:nth-child(1){top: 60%; left: 80%; animation: clouding 2.3s 1s ease infinite alternate;width: 20%;}
-        .cloud-content:nth-child(2){top: 50%; left: 10%; animation: clouding 2s 1s ease infinite alternate;  width: 15%;}
-        .cloud-content:nth-child(3){top: 40%; left: 87%; animation: clouding 3s 1s ease infinite alternate;  width: 25%;}
-        .cloud-content:nth-child(4){top: 20%; left: 20%; animation: clouding 1.8s 1s ease infinite alternate;width: 30%;}
-        .cloud-content:nth-child(5){top: 15%; left: 80%; animation: clouding 2.5s 1s ease infinite alternate;width: 20%;}
-        @keyframes clouding {
-            from{transform: translate(-50%,-50%);}
-            to{transform: translate(-50%,-65%);}
-        }
-        .cloudImg{
-            width: 100%;
-            transform: translate(0%,0%);
-            opacity: 0;
-            animation: cloudRising 2s 3.5s forwards ease;
-        }
-        @keyframes cloudRising{
-            from{opacity: 0; transform: translate(0%,100%);}
-            to{  opacity: 0.5; transform: translate(0%,-50%);}
-        }
-        .mountain-content{
-            width: 100%;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%,0);
-            bottom: 0;
-            opacity: 0;
-            animation: mtUP 1.5s 4.6s forwards ease;right: 0;
-        }
-        .mountain-content img{
-            width: 100%;
-        }
-        @keyframes mtUP{
-            0%{opacity: 0;transform: translate(-50%,55%);}
-            100%{opacity: 1;transform: translate(-50%,35%);}
-        }
-        .logo-enter{
-            display: none;
-            position: absolute;
-        }
-    </style>
-</head>
-<body>
-    <div class="blue-filter"></div>
-    <div class="index-container">
-        <div class="ball-container">
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="ball-content">
-            <div class="relative reverse-rotate">
-                <img class="ball" src="img/ball.png" alt="ball-1">
-            </div>
-            </div>
-            <div class="explode">
-            <img src="img/explode.png" alt="">
-            </div>
-        </div>
-        <div class="logo-animate">
-            <img src="img/index_logo.png" alt="idx_logo">
-            <div class="logo-enter">
-                <a href="#">
-                    <img src="img/enter.png" alt="enter">
-                </a>
-            </div>
-        </div>
-        <div class="cloud-container">
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud1.png" alt="cloud1">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud2.png" alt="cloud2">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud3.png" alt="cloud3">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud5.png" alt="cloud5">
-            </div>
-            <div class="cloud-content">
-                <img class="cloudImg" src="img/cloud4.png" alt="cloud4">
-            </div>
-        </div>
-        <div class="mountain-container">
-            <div class="mountain-content">
-                <img src="img/index_mountain.png" alt="index_mountain">
-            </div>
-        </div>
-
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        setTimeout(function(){
-            console.log('hi')
-        $('.logo-enter').fadeIn(600)
-        },5000)
-    </script>
-</body>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reset.css">
+
+    <title>Document</title>
+
+    <style>
+
+        body{
+
+            width: 100%;
+
+            height: 100vh;
+
+            background: url(img/bg.gif);
+
+            overflow: hidden;
+
+        }
+
+        .blue-filter{
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 800%;
+
+            opacity: 0.7;
+
+            background: linear-gradient(180deg, rgba(7,9,32,1) 0%, rgba(7,9,32,1) 21%, rgba(32,42,64,1) 30%, rgba(56,74,95,1) 47%, rgba(192,240,255,1) 80%, rgba(192,240,255,1) 100%);
+
+            animation: bgRising 2s 3s ease forwards;
+
+        }
+
+        @keyframes bgRising{
+
+            from{top: 0%;opacity: 0.7;}
+
+            to{top: -700%;opacity: 1;}
+
+        }
+
+        .index-container{
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: hidden;
+
+        }
+
+        .ball-content{
+
+            width: 300%;
+
+            height: 300%;
+
+            /* border: 1px solid rgb(255, 0, 0); */
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%,-50%) rotate(0deg);
+
+            animation: ballRotate-out 1.8s 0.2s ease forwards;
+
+            transition: 0.5s;
+
+        }
+
+        .ball-content:nth-child(2){
+
+            animation-delay: 0.05s;
+
+            transform: translate(-50%,-50%) rotate(51.42857deg)
+
+        }
+
+        .ball-content:nth-child(3){
+
+            animation-delay: 0.1s;
+
+            transform: translate(-50%,-50%) rotate(102.85714deg)
+
+        }
+
+        .ball-content:nth-child(4){
+
+            animation-delay: 0.15s;
+
+            transform: translate(-50%,-50%) rotate(154.28571deg)
+
+        }
+
+        .ball-content:nth-child(5){
+
+            animation-delay: 0.2s;
+
+            transform: translate(-50%,-50%) rotate(205.71428deg)
+
+        }
+
+        .ball-content:nth-child(6){
+
+            animation-delay: 0.25s;
+
+            transform: translate(-50%,-50%) rotate(257.14285deg)
+
+        }
+
+        .ball-content:nth-child(7){
+
+            animation-delay: 0.3s;
+
+            transform: translate(-50%,-50%) rotate(308.57142deg)
+
+        }
+
+        @keyframes ballRotate-out {
+
+            from{
+
+                width: 300%;
+
+                height: 300%;
+
+            }
+
+            to{
+
+                width: 0%;
+
+                height: 0%;
+
+            }
+
+        }
+
+        .relative{
+
+            width: 100%;
+
+            height: 100%;
+
+            position: relative;
+
+            transform: rotate(-40deg);
+
+            animation: ballRotate-in 1.6s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        @keyframes ballRotate-in{
+
+            from{
+
+                transform: rotate(-40deg);
+
+            }
+
+            to{
+
+                transform: rotate(180deg);  
+
+            }
+
+        }
+
+        .ball-content:nth-child(2) .relative{
+
+            animation-delay: 0.05s;
+
+        }
+
+        .ball-content:nth-child(3) .relative{
+
+            animation-delay: 0.1s;
+
+        }
+
+        .ball-content:nth-child(4) .relative{
+
+            animation-delay: 0.15s;
+
+        }
+
+        .ball-content:nth-child(5) .relative{
+
+            animation-delay: 0.2s;
+
+        }
+
+        .ball-content:nth-child(6) .relative{
+
+            animation-delay: 0.25s;
+
+        }
+
+        .ball-content:nth-child(7) .relative{
+
+            animation-delay: 0.3s;
+
+        }
+
+        img.ball{
+
+            position: absolute;
+
+            width: 200px;
+
+            /* transform: translate(-50%,-50%) rotate(0deg); */
+
+            top: 0%;
+
+            left: 50%;
+
+            animation: ball1 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        .ball-content:nth-child(2) .ball{
+
+            animation-delay: 0.05s;
+
+            animation: ball2 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        .ball-content:nth-child(3) .ball{
+
+            animation-delay: 0.1s;
+
+            animation: ball3 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        .ball-content:nth-child(4) .ball{
+
+            animation-delay: 0.15s;
+
+            animation: ball4 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        .ball-content:nth-child(5) .ball{
+
+            animation-delay: 0.2s;
+
+            animation: ball5 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        .ball-content:nth-child(6) .ball{
+
+            animation-delay: 0.25s;
+
+            animation: ball6 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        .ball-content:nth-child(7) .ball{
+
+            animation-delay: 0.3s;
+
+            animation: ball7 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+
+        }
+
+        @keyframes ball1{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-177deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-177deg);}}
+
+        @keyframes ball2{0%{opacity: 1; transform: translate(-41%,-39%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-230deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-230deg);}}
+
+        @keyframes ball3{0%{opacity: 1; transform: translate(-36%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-282deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-282deg);}}
+
+        @keyframes ball4{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-333deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-333deg);}}
+
+        @keyframes ball5{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-23deg) }100%{opacity: 0; transform: translate(-50%,-50%) rotate(-23deg) ;}}
+
+        @keyframes ball6{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-75deg) }100%{opacity: 0; transform: translate(-50%,-50%) rotate(-75deg) ;}}
+
+        @keyframes ball7{0%{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}85%{opacity: 1; transform: translate(-50%,-50%) rotate(-126deg)}100%{opacity: 0; transform: translate(-50%,-50%) rotate(-126deg);}}
+
+        .explode,
+
+        .logo-animate{
+
+            position: absolute;
+
+            transform: translate(-50%,-50%);
+
+            top:40%;
+
+            left: 50%;
+
+            opacity: 0;
+
+        }
+
+        .explode{
+
+            animation: explode 1.6s 2s ease forwards;
+
+        }
+
+        @keyframes explode {
+
+            0%{opacity: 0;transform:translate(-50%,-50%) scale(1);}
+
+            25%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
+
+            50%{opacity: 1;transform:translate(-50%,-50%) scale(1);}
+
+            75%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
+
+            100%{opacity: 0;transform:translate(-50%,-50%) scale(1);}
+
+        }
+
+        .logo-animate{
+
+            width: 500px;
+
+            animation: logoMain 1.5s 2.6s ease forwards;
+
+        }
+
+        @keyframes logoMain {
+
+            0%{opacity: 0; transform:translate(-50%,-60%) scale(0.95);}
+
+            100%{opacity: 1; transform:translate(-50%,-70%) scale(1);}
+
+        }
+
+        .logo-animate>img{
+
+            width: 80%;
+
+            display: block;
+
+            margin: auto;
+
+        }
+
+        .cloud-content{
+
+            position: absolute;
+
+            transform: translate(-50%,-50%);
+
+        }
+
+        .logo-enter{
+
+            margin-top: 25px;
+
+            width: 500px;
+
+        }
+
+        .logo-enter img{
+
+            width: 100%;
+
+        }
+
+        .cloud-content:nth-child(1){top: 60%; left: 80%; animation: clouding 2.3s 1s ease infinite alternate;width: 20%;}
+
+        .cloud-content:nth-child(2){top: 50%; left: 10%; animation: clouding 2s 1s ease infinite alternate;  width: 15%;}
+
+        .cloud-content:nth-child(3){top: 40%; left: 87%; animation: clouding 3s 1s ease infinite alternate;  width: 25%;}
+
+        .cloud-content:nth-child(4){top: 20%; left: 20%; animation: clouding 1.8s 1s ease infinite alternate;width: 30%;}
+
+        .cloud-content:nth-child(5){top: 15%; left: 80%; animation: clouding 2.5s 1s ease infinite alternate;width: 20%;}
+
+        @keyframes clouding {
+
+            from{transform: translate(-50%,-50%);}
+
+            to{transform: translate(-50%,-65%);}
+
+        }
+
+        .cloudImg{
+
+            width: 100%;
+
+            transform: translate(0%,0%);
+
+            opacity: 0;
+
+            animation: cloudRising 2s 3.5s forwards ease;
+
+        }
+
+        @keyframes cloudRising{
+
+            from{opacity: 0; transform: translate(0%,100%);}
+
+            to{  opacity: 0.5; transform: translate(0%,-50%);}
+
+        }
+
+        .mountain-content{
+
+            width: 100%;
+
+            position: absolute;
+
+            left: 50%;
+
+            transform: translate(-50%,0);
+
+            bottom: 0;
+
+            opacity: 0;
+
+            animation: mtUP 1.5s 4.6s forwards ease;right: 0;
+
+        }
+
+        .mountain-content img{
+
+            width: 100%;
+
+        }
+
+        @keyframes mtUP{
+
+            0%{opacity: 0;transform: translate(-50%,55%);}
+
+            100%{opacity: 1;transform: translate(-50%,35%);}
+
+        }
+
+        .logo-enter{
+
+            display: none;
+
+            position: absolute;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="blue-filter"></div>
+
+    <div class="index-container">
+
+        <div class="ball-container">
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="explode">
+
+            <img src="img/explode.png" alt="">
+
+            </div>
+
+        </div>
+
+        <div class="logo-animate">
+
+            <img src="img/index_logo.png" alt="idx_logo">
+
+            <div class="logo-enter">
+
+                <a href="#">
+
+                    <img src="img/enter.png" alt="enter">
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="cloud-container">
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud1.png" alt="cloud1">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud2.png" alt="cloud2">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud3.png" alt="cloud3">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud5.png" alt="cloud5">
+
+            </div>
+
+            <div class="cloud-content">
+
+                <img class="cloudImg" src="img/cloud4.png" alt="cloud4">
+
+            </div>
+
+        </div>
+
+        <div class="mountain-container">
+
+            <div class="mountain-content">
+
+                <img src="img/index_mountain.png" alt="index_mountain">
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+        setTimeout(function(){
+
+            console.log('hi')
+
+        $('.logo-enter').fadeIn(600)
+
+        },5000)
+
+    </script>
+
+</body>
+
 </html>
