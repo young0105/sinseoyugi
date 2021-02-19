@@ -1,0 +1,235 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    height:calc(100% - 180px);
+    margin-top: 180px;
+}
+
+section{
+    width: 50%;
+}
+
+.left{
+    background: url(img/season_bg_left.jpg) bottom center;
+    background-size: cover;
+    position: relative;
+}
+
+.right{
+    position: relative;
+}
+
+.poster_text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.left h2{
+    text-indent: -9999px;
+    width: 250px;
+    height: 85px;
+    background: url(img/title_season.png) center no-repeat;
+    background-size: cover;
+    margin: 0px auto 30px;
+}
+
+.left .thum_season{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.left .thum_season li{
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+.left .thum_season li a{
+    display: block;
+    width: 100%
+}
+
+.left .thum_season li a img{
+    width: 100%
+}
+
+.arrow{
+    display: block;
+    width: 50px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 999;
+}
+
+.arrow img{
+    width: 100%;
+}
+
+.detail{
+    width: 100vw;
+    height: 100%;
+}
+
+/* ---------------------------------------- */
+
+
+.season_flex{
+    width: 100vw;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    /* padding-top: 180px; */
+}
+
+.season_flex article{
+    width: 50%;
+}
+
+.season_story{
+    background: url(img/season_bg_right.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_story .poster{
+    width: 80%;
+    margin: 80px auto 25px;
+}
+
+.season_story .poster img{
+    width: 100%;
+}
+
+.season_desc{
+    width: 90%;
+    height: 300px;
+    background: url(img/description.png) center no-repeat;
+    background-size: contain;
+    margin: auto;
+    position: relative;
+}
+
+.season_desc .desc_text{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.season_desc p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+
+.season_character{
+    overflow: auto;
+    position: relative;
+}
+
+.character_contents{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.season_flex #bg_1{
+    background: url(img/season_bg_1.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_flex #bg_2{
+    background: url(img/season_bg_2.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_flex #bg_3{
+    background: url(img/season_bg_3.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_flex #bg_4{
+    background: url(img/season_bg_4.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_flex #bg_5{
+    background: url(img/season_bg_5.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_flex #bg_6{
+    background: url(img/season_bg_6.jpg) bottom center;
+    background-size: cover;
+}
+
+.season_flex #bg_7{
+    background: url(img/season_bg_7.jpg) bottom -50px center;
+    background-size: cover;
+}
+
+.season_flex #bg_8{
+    background: url(img/season_bg_8.jpg) bottom -50px center;
+    background-size: cover;
+}
+
+.season_character h2{
+    text-indent: -9999px;
+    width: 250px;
+    height: 85px;
+    background: url(img/title_character.png) center no-repeat;
+    background-size: cover;
+    margin: 0px auto 30px;
+}
+
+.season_character ul{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#bg_1 ul li, #bg_2 ul li{
+    width: 49%;
+}
+
+#bg_3 ul li{
+    width: 170px;
+}
+
+#bg_4 ul li{
+    width: 180px;
+}
+
+#bg_8 ul li{
+    width: 210px;
+    margin-bottom: 10px;
+}
+
+.season_character ul li{
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+.season_character ul li img{
+    width: 100%
+}

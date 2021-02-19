@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    position: relative;
+}
+
+.store_nav{
+    position: fixed;
+    width: 90px;
+    left: 200px;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.store_nav li{
+    cursor: pointer;
+}
+
+.inner{
+    width: 1200px;
+    margin: 200px auto 50px;
+}
+
+.inner .grid{
+    width: 100%;
+    overflow: hidden;
+}
+
+.inner .grid-item{
+    width: 270px;
+    height: 300px;
+    margin: 15px;
+    float: left;
+}
+
+.inner .grid-item img{
+    width: 100%;
+}
+
+.inner .grid-item p{
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
