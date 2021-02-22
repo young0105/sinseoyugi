@@ -70,7 +70,7 @@
 
             position: absolute;
 
-            top: 50%;
+            top: 40%;
 
             left: 50%;
 
@@ -160,7 +160,7 @@
 
             transform: rotate(-40deg);
 
-            animation: ballRotate-in 1.6s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ballRotate-in 1.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -228,7 +228,7 @@
 
             left: 50%;
 
-            animation: ball1 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball1 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -236,7 +236,7 @@
 
             animation-delay: 0.05s;
 
-            animation: ball2 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball2 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -244,7 +244,7 @@
 
             animation-delay: 0.1s;
 
-            animation: ball3 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball3 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -252,7 +252,7 @@
 
             animation-delay: 0.15s;
 
-            animation: ball4 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball4 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -260,7 +260,7 @@
 
             animation-delay: 0.2s;
 
-            animation: ball5 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball5 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -268,7 +268,7 @@
 
             animation-delay: 0.25s;
 
-            animation: ball6 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball6 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -276,7 +276,7 @@
 
             animation-delay: 0.3s;
 
-            animation: ball7 2.2s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
+            animation: ball7 2.5s 0.2s cubic-bezier(0, 0.56, 1, 1) forwards;
 
         }
 
@@ -312,19 +312,16 @@
 
         .explode{
 
-            animation: explode 1.6s 2s ease forwards;
-
+            animation: explode 0.9s 2.1s ease forwards;
+            top:42%;
+            left: 48%;
         }
 
         @keyframes explode {
 
             0%{opacity: 0;transform:translate(-50%,-50%) scale(1);}
 
-            25%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
-
-            50%{opacity: 1;transform:translate(-50%,-50%) scale(1);}
-
-            75%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
+            50%{opacity: 1;transform:translate(-50%,-50%) scale(1.1);}
 
             100%{opacity: 0;transform:translate(-50%,-50%) scale(1);}
 
@@ -467,80 +464,79 @@
     <div class="index-container">
 
         <div class="ball-container">
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
-            <div class="ball-content">
-
-            <div class="relative reverse-rotate">
-
-                <img class="ball" src="img/ball.png" alt="ball-1">
-
-            </div>
-
-            </div>
-
             <div class="explode">
 
-            <img src="img/explode.png" alt="">
+                <img src="img/index_explode.png" alt="explode">
+    
+                </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
+
+            </div>
+
+            <div class="ball-content">
+
+            <div class="relative reverse-rotate">
+
+                <img class="ball" src="img/ball.png" alt="ball-1">
+
+            </div>
 
             </div>
 
